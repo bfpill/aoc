@@ -19,10 +19,9 @@ for line in D:
     while True:
         next_nodes = []
 
-        for i in range(len(nodes)):
-            if i+1 < len(nodes):
-                n_val = nodes[i+1].val - nodes[i].val
-                next_nodes.append(Node(nodes[i], nodes[i+1], n_val))
+        for i in range(len(nodes)-1):
+            n_val = nodes[i+1].val - nodes[i].val
+            next_nodes.append(Node(nodes[i], nodes[i+1], n_val))
 
         if(nodes and all(node.val == 0 for node in nodes)):
             break
